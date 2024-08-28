@@ -1,6 +1,6 @@
 import streamlit as st
 
-import admin, basicUser, logout
+import home, basicUser, logout
 
 if 'password' not in st.session_state:
     st.session_state.password = ""
@@ -42,12 +42,9 @@ def app():
                     st.error("Incorrect username or password")
     else:
         
-        if st.session_state.username == "phone":
-            admin.app()
-        elif st.session_state.username == "laptop":
-            logout.app()                                                                                 
-        elif st.session_state.username == "hehe":
-            basicUser.app()
+        if st.session_state.loggedOut == False:
+            home.app()
+    
         else:
             st.session_state.loggedOut = True
-            st.experimental_rerun()  # Rerun to display the login form again
+            app()
