@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import login, admin, basicUser, customer_portal, home, operations_portal, logout
+import login, basicUser, customer_portal, home, operations_portal, logout
 
 page_title = "Portal"
 
@@ -77,7 +77,6 @@ app = MultiApp()
 # Add all your applications here
 app.add_app('Home', home.app)
 app.add_app('Customer Portal', customer_portal.app)
-app.add_app('Admin', admin.app)
 app.add_app('Operations Portal', operations_portal.app)
 app.add_app('Login', login.app)
 app.add_app('Logout', logout.app)
